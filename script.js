@@ -303,37 +303,69 @@ document.addEventListener("DOMContentLoaded", () => {
             if(e.key === 'Enter') runSearch();
         });
     }
+
+    // --- 7. INTERACTIVIDAD AVANZADA LOGO (Cámara & Susurro) ---
+    const interactiveTarget = document.querySelector('.interactive-letter');
+    
+    // Instanciamos los audios multimedia (Colócalos en tu directorio Assets/)
+    const cameraSound = new Audio('Assets/click.MP3'); 
+    const whisperSound = new Audio('Assets/Fokuz.MP3'); 
+
+    if (interactiveTarget) {
+        interactiveTarget.addEventListener('click', () => {
+            // Evitamos la superposición reiniciando los buffers de audio
+            cameraSound.currentTime = 0;
+            whisperSound.currentTime = 0;
+
+            // 1. Ejecutar sonido e impacto visual de la cámara (Flash)
+            cameraSound.play().catch(err => console.log("Interacción de audio bloqueada por el navegador"));
+            interactiveTarget.classList.add('camera-flash');
+
+            // Limpiamos el flash de la cámara al terminar su ciclo de animación
+            setTimeout(() => {
+                interactiveTarget.classList.remove('camera-flash');
+            }, 350);
+
+            // 2. Retardo calculado para que el susurro y el barrido entren justo tras el click
+            setTimeout(() => {
+                whisperSound.play().catch(err => console.log(err));
+                interactiveTarget.classList.add('whisper-glow');
+            }, 400);
+
+            // Quitamos el efecto de barrido brillante para poder repetir el bucle en futuros clicks
+            setTimeout(() => {
+                interactiveTarget.classList.remove('whisper-glow');
+            }, 1900);
+        });
+    }
+
+    // --- 8. Envío Directo a Correo con EmailJS (Sin salir de la página) ---
+    emailjs.init("4EZ9ZuktjzCYul8Rr");
+
+    const contactForm = document.getElementById('contact-form');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "Enviando...";
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_6p71b0g', 'template_baw1ozm', this)
+                .then(() => {
+                    alert('¡Gracias! Tu solicitud ha sido enviada con éxito directamente a nuestro equipo.');
+                    contactForm.reset(); 
+                })
+                .catch((error) => {
+                    alert('Ocurrió un error al enviar el mensaje. Por favor, intenta de nuevo.');
+                    console.log('Error de EmailJS:', error);
+                })
+                .finally(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
 });
-
-// --- 7. Envío Directo a Correo con EmailJS (Sin salir de la página) ---
-// Inicializa EmailJS con tu Public Key
-emailjs.init("mdXIlPji9qT_u5p-I");
-
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita que la página se recargue o abra otra app
-
-        // Cambia el texto del botón para avisar que se está enviando
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = "Enviando...";
-        submitBtn.disabled = true;
-
-        // Envía el formulario directamente
-        emailjs.sendForm('service_5udo4bg', 'template_5lxqggl', this)
-            .then(() => {
-                alert('¡Gracias! Tu solicitud ha sido enviada con éxito directamente a nuestro equipo.');
-                contactForm.reset(); // Limpia los campos del formulario
-            })
-            .catch((error) => {
-                alert('Ocurrió un error al enviar el mensaje. Por favor, intenta de nuevo.');
-                console.log('Error de EmailJS:', error);
-            })
-            .finally(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            });
-    });
-}

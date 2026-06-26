@@ -582,7 +582,6 @@ body.modal-open {
     margin: 0 auto;
 }
 
-/* AQUÍ REFORZAMOS QUE LAS TARJETAS NO LLEVEN SUBRAYADO POR SER ENLACES */
 .mechanic-card {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.03);
@@ -675,7 +674,6 @@ footer {
     gap: 30px;
 }
 
-/* ANIMACIÓN MEJORADA DE ICONOS DEL FOOTER */
 .footer-links a {
     color: var(--text-muted);
     font-family: var(--font-head);
@@ -704,7 +702,6 @@ footer {
 /* ==========================================================================
    HEADER STICKY, MENÚ HAMBURGUESA Y BUSCADOR
    ========================================================================== */
-
 .highlight-text {
     background-color: var(--accent);
     color: #fff;
@@ -729,6 +726,49 @@ footer {
 
 .logo {
     font-size: 1.5rem; font-weight: 900; color: #fff; letter-spacing: 1px;
+    cursor: pointer; user-select: none;
+}
+
+/* INTERACTIVIDAD MULTIMEDIA LOGO */
+.interactive-letter {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), text-shadow 0.25s ease;
+}
+
+.interactive-letter:hover {
+    transform: scale(1.25) rotate(-3deg);
+    text-shadow: 0 0 15px var(--accent);
+    color: #fff;
+}
+
+/* Efecto de destello de cámara (Shutter Flash) */
+.interactive-letter.camera-flash::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,50,157,0) 70%);
+    z-index: 10;
+    pointer-events: none;
+    animation: flash-animation 0.35s ease-out forwards;
+}
+
+/* Efecto de barrido brillante (Paneo) */
+.interactive-letter.whisper-glow {
+    animation: glow-pan-animation 1.5s ease-in-out forwards;
+}
+
+@keyframes flash-animation {
+    0% { opacity: 0; transform: scale(0.5); }
+    15% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes glow-pan-animation {
+    0% { text-shadow: 0 0 0px rgba(255, 50, 157, 0); color: #fff; }
+    30% { text-shadow: -15px 0 20px var(--cerulean), 0 0 30px var(--accent); color: var(--accent); }
+    60% { text-shadow: 15px 0 20px var(--accent), 0 0 30px var(--amber); color: var(--amber); }
+    100% { text-shadow: 0 0 8px rgba(255, 50, 157, 0.4); color: #fff; }
 }
 
 .hamburger {
@@ -899,9 +939,9 @@ footer {
 
     /* Corrección del Formulario Cortado en Vertical */
     .glass-panel {
-        padding: 25px 20px; /* Reducimos el padding excesivo para dar espacio al contenido */
-        margin: 0 15px;     /* Forzamos márgenes laterales para que no toque los bordes del dispositivo */
-        width: calc(100% - 30px); /* Aseguramos que use el ancho disponible de forma exacta */
+        padding: 25px 20px; 
+        margin: 0 15px;     
+        width: calc(100% - 30px); 
     }
 
     .focuz-form input, .focuz-form textarea {
@@ -910,7 +950,7 @@ footer {
     }
 
     .btn {
-        padding: 12px 20px; /* Evitamos que los botones rompan sus contenedores en móviles */
+        padding: 12px 20px; 
         font-size: 0.85rem;
     }
 
