@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokuz Store | Servicios Modulares, Merch Corporativo & Estudio Musical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER STICKY UNIVERSAL + BOTÓN DE CARRITO EXCLUSIVO -->
+    <div class="focuz-header">
+        <div class="header-left">
+            <button id="hamburger-menu" class="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="logo" id="interactive-logo" title="Ir al Inicio">
+                <span class="interactive-letter">FOKUZ<span class="dot" style="color: var(--accent);">.</span></span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" id="global-search" placeholder="Buscar..." data-key-placeholder="search-placeholder">
+                <button id="btn-search" aria-label="Buscar">🔍</button>
+            </div>
+            <div class="lang-selector">
+                <button id="btn-es" class="active">ES</button>
+                <span>|</span>
+                <button id="btn-en">EN</button>
+            </div>
+            <button id="cart-toggle-btn" class="cart-toggle-btn" aria-label="Abrir Carrito de Compras">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-counter" id="cart-counter">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN MÓVIL DESLIZABLE -->
+    <nav id="side-menu" class="side-menu">
+        <span class="close-menu">&times;</span>
+        <ul>
+            <li><a href="index.html" data-key="nav-home">Inicio</a></li>
+            <li><a href="nosotros.html" data-key="nav-about">Nosotros</a></li>
+            <li><a href="servicios.html" data-key="nav-services">Servicios</a></li>
+            <li><a href="portafolio.html" data-key="nav-portfolio">Portafolio</a></li>
+            <li><a href="tienda.html" class="active" data-key="nav-store">Tienda</a></li>
+            <li><a href="#contact" data-key="nav-contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- OVERLAY Y SIDEBAR DEL CARRITO DE COMPRAS -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <aside id="cart-sidebar" class="cart-sidebar" aria-label="Carrito de Compras">
+        <div class="cart-header">
+            <h3 data-key="cart-title">Tu Pedido Fokuz</h3>
+            <button id="cart-close-btn" class="cart-close-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div id="cart-items-container" class="cart-items-container">
+            <p class="cart-empty-msg" data-key="cart-empty">Tu carrito está vacío. Explora nuestros paquetes modulares, merch o sesiones de estudio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary-row">
+                <span data-key="cart-subtotal-lbl">Subtotal Estimado:</span>
+                <strong id="cart-subtotal">$0 COP</strong>
+            </div>
+            <div class="cart-summary-row total-row">
+                <span data-key="cart-total-lbl">Total del Pedido:</span>
+                <strong id="cart-total">$0 COP</strong>
+            </div>
+            <div class="cart-actions">
+                <button id="btn-whatsapp-checkout" class="btn primary-btn w-100 cart-wa-btn" data-key="cart-btn-wa">
+                    📲 Finalizar Pedido por WhatsApp
+                </button>
+                <button id="btn-online-checkout" class="btn secondary-btn w-100 cart-pay-btn" data-amount="0" data-reference="FKZ-INIT" data-currency="COP" data-key="cart-btn-pay">
+                    💳 Pagar en Línea (Wompi / PSE / Tarjetas)
+                </button>
+                <button id="btn-clear-cart" class="cart-clear-link" data-key="cart-btn-clear">Vaciar Carrito</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573019263077" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- A. HERO COMERCIAL CON FILTRO RÁPIDO Y BUSCADOR INTERNO -->
+    <header class="hero store-hero" style="padding-top: 80px;">
+        <div class="store-hero-bg" style="background-image: url('images/Fokuz Store2.webp');"></div>
+        <div class="hero-overlay store-hero-overlay"></div>
+        <div class="hero-content fade-in" style="max-width: 1000px;">
+            <span class="featured-badge" data-key="store-hero-badge">ECOMMERCE MODULAR • COLOMBIA</span>
+            <h1 class="game-title" data-key="store-hero-title">FOKUZ STORE | SERVICIOS, MERCH Y ESTUDIO</h1>
+            <p class="subtitle" data-key="store-hero-subtitle">Adquiere paquetes de edición modular, material publicitario empresarial para tu marca o reserva sesiones de estudio con flujo técnico digital.</p>
+
+            <!-- Buscador Rápido de Catálogo -->
+            <div class="store-search-bar">
+                <input type="text" id="store-search-input" placeholder="Filtrar productos o servicios (ej. Mugs, Reels, Rack, Estudio)..." data-key-placeholder="store-search-ph">
+            </div>
+
+            <!-- Barra de Filtrado por Categorías -->
+            <div class="store-filters" role="tablist">
+                <button class="store-filter-btn active" data-category="all" data-key="store-filter-all">Todos</button>
+                <button class="store-filter-btn" data-category="services" data-key="store-filter-services">Post-Producción & Video</button>
+                <button class="store-filter-btn" data-category="merch" data-key="store-filter-merch">Merchandising & Artículos Publicitarios</button>
+                <button class="store-filter-btn" data-category="studio" data-key="store-filter-studio">Estudio Musical & Sonido en Vivo</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- B. CATÁLOGO TRIPARTITO DE PRODUCTOS Y SERVICIOS -->
+    <section id="store-catalog" class="store-catalog-section fade-in">
+        <div class="container-wide">
+            <div class="store-grid" id="store-grid">
+
+                <!-- =========================================================
+                     CATEGORÍA 1: SERVICIOS CREATIVOS & POST-PRODUCCIÓN MODULAR
+                     ========================================================= -->
+
+                <!-- 1. Edición de Video Social / Reels / TikToks -->
+                <article class="product-card glass-panel" data-category="services" data-id="srv-reels">
+                    <div class="product-img-wrap">
+                        <img src="images/12.webp" alt="Edición de Video Social Reels" loading="lazy">
+                        <span class="product-badge amber" data-key="badge-bestseller">MÁS VENDIDO</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-services">POST-PRODUCCIÓN & VIDEO</span>
+                        <h3 class="product-title" data-key="prod-1-title">Edición de Video Social / Reels / TikToks</h3>
+                        <p class="product-desc" data-key="prod-1-desc">Montaje vertical de alta retención con subtítulos dinámicos, diseño sonoro (SFX), corrección de color y ritmo comercial.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Modalidad:</label>
+                        <select class="option-selector">
+                            <option value="cliente" data-price="120000" data-key="opt-vs-1">Material suministrado por el cliente — $120.000 COP</option>
+                            <option value="ia" data-price="180000" data-key="opt-vs-2">Generación y asistencia con IA — $180.000 COP</option>
+                            <option value="rodaje" data-price="350000" data-key="opt-vs-3">Plan con rodaje presencial Fokuz — $350.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$120.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 2. Video Corporativo & Comercial -->
+                <article class="product-card glass-panel" data-category="services" data-id="srv-corp-video">
+                    <div class="product-img-wrap">
+                        <img src="images/1.webp" alt="Video Corporativo & Comercial" loading="lazy">
+                        <span class="product-badge magenta" data-key="badge-pro">CINE 4K</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-services">POST-PRODUCCIÓN & VIDEO</span>
+                        <h3 class="product-title" data-key="prod-2-title">Video Corporativo & Comercial</h3>
+                        <p class="product-desc" data-key="prod-2-desc">Piezas institucionales y comerciales de estándar cinematográfico para posicionar la autoridad de tu empresa.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Modalidad:</label>
+                        <select class="option-selector">
+                            <option value="montaje" data-price="450000" data-key="opt-vc-1">Solo montaje y corrección de color — $450.000 COP</option>
+                            <option value="integral" data-price="1200000" data-key="opt-vc-2">Producción integral (Grabación en locación + Edición) — $1.200.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$450.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 3. Edición & Limpieza de Audio para Podcasts / Locuciones -->
+                <article class="product-card glass-panel" data-category="services" data-id="srv-podcast-audio">
+                    <div class="product-img-wrap">
+                        <img src="images/4.webp" alt="Edición Audio Podcasts" loading="lazy">
+                        <span class="product-badge cerulean" data-key="badge-broadcast">BROADCAST LUFS</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-services">POST-PRODUCCIÓN & AUDIO</span>
+                        <h3 class="product-title" data-key="prod-3-title">Edición & Limpieza de Audio (Podcasts / Locución)</h3>
+                        <p class="product-desc" data-key="prod-3-desc">Restauración espectral, eliminación de ruido, ecualización vocal y masterización para Spotify, YouTube y pauta radial/digital.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Modalidad:</label>
+                        <select class="option-selector">
+                            <option value="pistas" data-price="95000" data-key="opt-ap-1">Procesamiento de pistas cliente — $95.000 COP</option>
+                            <option value="diseno" data-price="220000" data-key="opt-ap-2">Diseño sonoro y cortinillas originales — $220.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$95.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- =========================================================
+                     CATEGORÍA 2: MERCHANDISING CORPORATIVO & ARTÍCULOS PROMOCIONALES
+                     ========================================================= -->
+
+                <!-- 4. Mugs Personalizados / Sublimación -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-mugs">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store.webp" alt="Mugs Personalizados Sublimación" style="object-position: 15% 65%;" loading="lazy">
+                        <span class="product-badge amber" data-key="badge-top-col">TOP COLOMBIA</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-4-title">Mugs Personalizados / Sublimación 11oz</h3>
+                        <p class="product-desc" data-key="prod-4-desc">Mugs de cerámica AAA de 11oz con impresión full color de alta durabilidad para regalos empresariales, eventos y fidelización.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="blanco-docena" data-price="180000" data-key="opt-mg-1">Docena (x12) Blanco Clásico 11oz — $180.000 COP</option>
+                            <option value="color-docena" data-price="220000" data-key="opt-mg-2">Docena (x12) Borde e Interior Color — $220.000 COP</option>
+                            <option value="magico-docena" data-price="260000" data-key="opt-mg-3">Docena (x12) Mug Mágico Termosensible — $260.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$180.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 5. Camisetas Empresariales / Dotación -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-shirts">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store.webp" alt="Camisetas Empresariales DTF" style="object-position: 35% 35%;" loading="lazy">
+                        <span class="product-badge magenta" data-key="badge-dtf">DTF / VINILO PREMIUM</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-5-title">Camisetas Empresariales & Dotación</h3>
+                        <p class="product-desc" data-key="prod-5-desc">Camisetas cuello redondo o tipo polo en algodón peinado y poliéster de alto gramaje con estampado DTF o vinilo textil de alta resistencia.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="cuello-redondo-6" data-price="270000" data-key="opt-sh-1">Pack x6 Cuello Redondo Algodón + DTF — $270.000 COP</option>
+                            <option value="polo-6" data-price="360000" data-key="opt-sh-2">Pack x6 Tipo Polo Corporativa Alto Gramaje — $360.000 COP</option>
+                            <option value="dotacion-12" data-price="640000" data-key="opt-sh-3">Lote Dotación Empresarial x12 Unidades — $640.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$270.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 6. Gorras Corporativas -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-caps">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store2.webp" alt="Gorras Corporativas" style="object-position: 28% 55%;" loading="lazy">
+                        <span class="product-badge cerulean" data-key="badge-embroidery">BORDADO / ESTAMPADO</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-6-title">Gorras Corporativas (Trucker & Dril)</h3>
+                        <p class="product-desc" data-key="prod-6-desc">Gorras tipo camionero (trucker con malla) o dril estructurado con bordado computarizado de alta precisión o estampado termo-fijado.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="trucker-12" data-price="320000" data-key="opt-cp-1">Docena (x12) Gorra Trucker Termo-fijada — $320.000 COP</option>
+                            <option value="dril-bordada-12" data-price="420000" data-key="opt-cp-2">Docena (x12) Gorra Dril Bordado Computarizado — $420.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$320.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 7. Mouse Pads / Desk Mats Personalizados -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-mousepads">
+                    <div class="product-img-wrap">
+                        <img src="images/tienda.png" alt="Mouse Pads Personalizados" style="object-position: center center;" loading="lazy">
+                        <span class="product-badge amber" data-key="badge-hd">ALTA RESOLUCIÓN</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-7-title">Mouse Pads & Desk Mats Personalizados</h3>
+                        <p class="product-desc" data-key="prod-7-desc">Base de caucho natural antideslizante con superficie textil speed sublimada en alta definición con la identidad de tu empresa.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="pad-oficina-12" data-price="190000" data-key="opt-mp-1">Pack x12 Mouse Pad Estándar Oficina — $190.000 COP</option>
+                            <option value="deskmat-xl" data-price="75000" data-key="opt-mp-2">Desk Mat XL Extendido Gamer/Estudio (Unidad) — $75.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$190.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 8. Agendas & Cuadernos Corporativos -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-agendas">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store2.webp" alt="Agendas Corporativas" style="object-position: 60% 45%;" loading="lazy">
+                        <span class="product-badge magenta" data-key="badge-vip">EJECUTIVO VIP</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-8-title">Agendas & Cuadernos Corporativos</h3>
+                        <p class="product-desc" data-key="prod-8-desc">Cuadernos doble O y agendas ejecutivas con portada dura plastificada mate/brillante e insertos corporativos personalizados.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="cuaderno-12" data-price="360000" data-key="opt-ag-1">Docena (x12) Cuaderno Argollado Pasta Dura — $360.000 COP</option>
+                            <option value="agenda-vip-12" data-price="490000" data-key="opt-ag-2">Docena (x12) Agenda Ejecutiva con Insertos — $490.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$360.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 9. Lapiceros Publicitarios -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-pens">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store.webp" alt="Lapiceros Publicitarios" style="object-position: 62% 78%;" loading="lazy">
+                        <span class="product-badge cerulean" data-key="badge-laser">GRABADO LÁSER</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-9-title">Lapiceros Publicitarios (Láser / Tampografía)</h3>
+                        <p class="product-desc" data-key="prod-9-desc">Bolígrafos metálicos ejecutivos y plásticos promocionales por volumen ideales para ferias comerciales, congresos y activaciones.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="plastico-50" data-price="145000" data-key="opt-pn-1">Lote x50 Bolígrafos Plásticos Tampografía — $145.000 COP</option>
+                            <option value="metalico-25" data-price="215000" data-key="opt-pn-2">Lote x25 Bolígrafos Metálicos Grabado Láser — $215.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$145.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 10. Termos & Botilitos Metálicos -->
+                <article class="product-card glass-panel" data-category="merch" data-id="merch-thermos">
+                    <div class="product-img-wrap">
+                        <img src="images/Fokuz Store2.webp" alt="Termos Metálicos Corporativos" style="object-position: 88% 50%;" loading="lazy">
+                        <span class="product-badge amber" data-key="badge-stock">ALTA ROTACIÓN</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-merch">MERCHANDISING CORPORATIVO</span>
+                        <h3 class="product-title" data-key="prod-10-title">Termos & Botilitos Metálicos</h3>
+                        <p class="product-desc" data-key="prod-10-desc">Termos de acero inoxidable y botilitos deportivos en aluminio con grabado láser permanente o sublimación full color de marca.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Presentación:</label>
+                        <select class="option-selector">
+                            <option value="botilito-12" data-price="390000" data-key="opt-th-1">Docena (x12) Botilito Metálico 600ml — $390.000 COP</option>
+                            <option value="termo-laser-12" data-price="540000" data-key="opt-th-2">Docena (x12) Termo Acero Inox Doble Pared Láser — $540.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$390.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- =========================================================
+                     CATEGORÍA 3: ESTUDIO MUSICAL & AUDIO EN VIVO (SETUP TÉCNICO REAL)
+                     ========================================================= -->
+
+                <!-- 11. Grabación de Instrumentos en Estudio -->
+                <article class="product-card glass-panel" data-category="studio" data-id="studio-instruments">
+                    <div class="product-img-wrap">
+                        <img src="images/9.webp" alt="Grabación de Instrumentos en Estudio" loading="lazy">
+                        <span class="product-badge magenta" data-key="badge-studio">FOKUZ AUDIO LAB</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-studio">ESTUDIO MUSICAL & SONIDO</span>
+                        <h3 class="product-title" data-key="prod-11-title">Grabación de Instrumentos & Voces en Estudio</h3>
+                        <p class="product-desc" data-key="prod-11-desc">Captura con microfonía profesional de alta gama para guitarras eléctricas/acústicas, bajos, teclados, voces y vientos.</p>
+                        <div class="studio-tech-note" data-key="prod-11-note">
+                            ℹ️ Especificación Técnica: No incluye captura de batería acústica completa; 100% compatible con producción de baterías MIDI/programadas de estudio o sesiones acústicas.
+                        </div>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Sesión:</label>
+                        <select class="option-selector">
+                            <option value="hora-estudio" data-price="95000" data-key="opt-st-1">Sesión por Hora (Voces / Guitarras / Bajo / Vientos) — $95.000 COP</option>
+                            <option value="bloque-4h" data-price="340000" data-key="opt-st-2">Bloque Media Jornada (4 Horas) + Edición — $340.000 COP</option>
+                            <option value="single-completo" data-price="680000" data-key="opt-st-3">Producción Single Completo + Batería MIDI + Mezcla — $680.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$95.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 12. Sesiones de Grabación En Vivo / Live Sessions -->
+                <article class="product-card glass-panel" data-category="studio" data-id="studio-live-session">
+                    <div class="product-img-wrap">
+                        <img src="images/6.webp" alt="Sesiones de Grabación En Vivo" loading="lazy">
+                        <span class="product-badge cerulean" data-key="badge-multitrack">MULTITRACK LIVE</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-studio">ESTUDIO MUSICAL & SONIDO</span>
+                        <h3 class="product-title" data-key="prod-12-title">Sesiones de Grabación En Vivo / Live Sessions</h3>
+                        <p class="product-desc" data-key="prod-12-desc">Captura multitrack simultánea en directo para agrupaciones, dúos, solistas o ensambles acústicos con mezcla de estudio.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Formato:</label>
+                        <select class="option-selector">
+                            <option value="duo-acustico" data-price="480000" data-key="opt-lv-1">Formato Dúo / Acústico Multitrack — $480.000 COP</option>
+                            <option value="ensamble-full" data-price="890000" data-key="opt-lv-2">Ensamble Completo Audio Multitrack + Video 4K — $890.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$480.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 13. Alquiler de Rack de Monitoreo & Consola Digital -->
+                <article class="product-card glass-panel" data-category="studio" data-id="studio-rack-rental">
+                    <div class="product-img-wrap">
+                        <img src="images/2.webp" alt="Alquiler Rack de Monitoreo y Consola Digital" loading="lazy">
+                        <span class="product-badge amber" data-key="badge-live-gear">SONIDO EN VIVO</span>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-cat-tag" data-key="cat-tag-studio">ESTUDIO MUSICAL & SONIDO</span>
+                        <h3 class="product-title" data-key="prod-13-title">Alquiler de Rack de Monitoreo & Consola Digital</h3>
+                        <p class="product-desc" data-key="prod-13-desc">Consola digital profesional montada en rack para sonido en vivo, transmisiones streaming, monitoreo in-ear para bandas o conferencias empresariales.</p>
+                        
+                        <label class="selector-label" data-key="lbl-select-mode">Selecciona Plan de Alquiler:</label>
+                        <select class="option-selector">
+                            <option value="rack-evento" data-price="450000" data-key="opt-rk-1">Consola Digital + Rack Monitoreo (Por Evento) — $450.000 COP</option>
+                            <option value="rack-ingeniero" data-price="750000" data-key="opt-rk-2">Rack Completo + Ingeniero de Monitoreo / Streaming — $750.000 COP</option>
+                        </select>
+
+                        <div class="product-footer">
+                            <div class="product-price-display">$450.000 COP</div>
+                            <button class="btn primary-btn add-to-cart-btn" data-key="btn-add-cart">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL DE PASARELA DE PAGOS COLOMBIA (WOMPI / MERCADO PAGO / PSE) -->
+    <div id="gateway-modal" class="modal-overlay">
+        <div class="dev-modal-content gateway-modal-box">
+            <span class="gateway-modal-close dev-modal-close">&times;</span>
+            <span class="featured-badge" data-key="gw-badge">CHECKOUT SEGURO COLOMBIA</span>
+            <h3 class="dev-name" style="margin-top: 10px;" data-key="gw-title">Resumen de Pago en Línea</h3>
+            <p class="gw-subtitle" data-key="gw-desc">Orden lista para procesar mediante Wompi (Bancolombia), PSE, Nequi o Mercado Pago.</p>
+            <div class="gw-summary-card">
+                <div class="gw-row">
+                    <span data-key="gw-ref-lbl">Referencia de Orden:</span>
+                    <strong id="gw-order-ref">FKZ-0000</strong>
+                </div>
+                <div class="gw-row">
+                    <span data-key="gw-items-lbl">Artículos / Servicios:</span>
+                    <strong id="gw-order-count">0</strong>
+                </div>
+                <div class="gw-row total">
+                    <span data-key="gw-total-lbl">Total a Pagar:</span>
+                    <strong id="gw-order-total">$0 COP</strong>
+                </div>
+            </div>
+            <div class="gw-methods-badges">
+                <span class="gw-pill">🏦 PSE / Bancolombia</span>
+                <span class="gw-pill">📱 Nequi / Daviplata</span>
+                <span class="gw-pill">💳 Tarjeta Crédito / Débito</span>
+            </div>
+            <!-- Contenedor donde se inyecta el Widget de Wompi o Mercado Pago -->
+            <div id="wompi-widget-container" style="margin-top: 20px;">
+                <button id="btn-trigger-wompi" class="btn primary-btn w-100" data-key="gw-btn-confirm">
+                    🔒 Continuar a Pasarela / Confirmar Orden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE CIERRE / FORMULARIO DE CONVERSIÓN -->
+    <section id="contact" class="gameplay-section fade-in">
+        <h2 class="section-title" data-key="gameplay-title">Hablemos de tu proyecto</h2>
+        <div class="glass-panel" style="max-width: 600px; margin: 0 auto;">
+            <form id="contact-form" class="focuz-form">
+                <input type="text" id="from_name" name="Nombre" placeholder="Nombre completo" data-key-placeholder="form-name" required>
+                <input type="text" id="company_name" name="Empresa" placeholder="Empresa" data-key-placeholder="form-company">
+                <input type="email" id="reply_to" name="Correo" placeholder="Correo electrónico" data-key-placeholder="form-email" required>
+                <input type="tel" id="phone_num" name="Telefono" placeholder="Teléfono" data-key-placeholder="form-phone" required>
+                <textarea id="message_text" name="Mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?" data-key-placeholder="form-message" required></textarea>
+                <button type="submit" class="btn primary-btn w-100" data-key="ctrl-move">Solicitar Asesoría</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- FOOTER UNIFICADO -->
+    <footer>
+        <img src="images/logo2.webp" alt="Focuz Logo" class="footer-logo" title="Ver Info del Equipo">
+        <p data-key="footer-text">Estrategia, creatividad y tecnología para transformar ideas en resultados medibles.</p>
+        
+        <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61590798072623" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fokuz.marketing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@fokuz.marketing" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.63-1.5 5.23-3.8 6.44-2.34 1.24-5.32 1.17-7.53-.13-2.02-1.17-3.35-3.32-3.47-5.69-.11-2.18 1.05-4.4 2.89-5.54 1.94-1.2 4.45-1.35 6.54-.42v4.06c-1.22-.53-2.69-.5-3.81.25-1.1.72-1.73 2.06-1.63 3.38.07 1.25.86 2.45 2.01 3.01 1.16.58 2.62.5 3.69-.25 1.14-.77 1.83-2.13 1.85-3.52.05-4.8.03-9.59.03-14.39.01-.13 0-.26-.01-.39z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@FokuzMarketing" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+        <p class="copyright">© 2026 Focuz Marketing. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL DE IMAGEN / MULTIMEDIA -->
+    <div id="image-modal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" src="" alt="Proyecto ampliado">
+        <div id="modal-media-container" class="modal-media-container"></div>
+    </div>
+
+    <!-- MODAL DE EQUIPO DIRECTIVO -->
+    <div id="dev-modal" class="modal-overlay">
+        <div class="dev-modal-content team-modal">
+            <span class="dev-modal-close">&times;</span>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/foto.webp" alt="Nahum Sebastian Bermeo Barrera" class="dev-profile-pic">
+                    <h3 class="dev-name">Nahum Sebastian Bermeo</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Audio Production Technologist from UNAD</li>
+                            <li>Undergraduate Multimedia Engineer</li>
+                            <li>Communications and Marketing Management Assistant – UNAD</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/Angie.webp" alt="Angie Liseth Sepulveda" class="dev-profile-pic" style="object-fit: contain; background: #fff;">
+                    <h3 class="dev-name">Angie Sepulveda M.</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Marketing and Digital Business Undergraduate Student – UNAD</li>
+                            <li>Content Creator & Host</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
