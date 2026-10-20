@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Fokuz Marketing - Catálogo de Soluciones 360°</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER STICKY UNIVERSAL -->
+    <div class="focuz-header">
+        <div class="header-left">
+            <button id="hamburger-menu" class="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="logo" id="interactive-logo" title="Ir al Inicio">
+                <span class="interactive-letter">FOKUZ<span class="dot" style="color: var(--accent);">.</span></span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" id="global-search" placeholder="Buscar..." data-key-placeholder="search-placeholder">
+                <button id="btn-search" aria-label="Buscar">🔍</button>
+            </div>
+            <div class="lang-selector">
+                <button id="btn-es" class="active">ES</button>
+                <span>|</span>
+                <button id="btn-en">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN MÓVIL DESLIZABLE -->
+    <nav id="side-menu" class="side-menu">
+        <span class="close-menu">&times;</span>
+        <ul>
+            <li><a href="index.html" data-key="nav-home">Inicio</a></li>
+            <li><a href="nosotros.html" data-key="nav-about">Nosotros</a></li>
+            <li><a href="servicios.html" class="active" data-key="nav-services">Servicios</a></li>
+            <li><a href="portafolio.html" data-key="nav-portfolio">Portafolio</a></li>
+            <li><a href="tienda.html" data-key="nav-store">Tienda</a></li>
+            <li><a href="#contact" data-key="nav-contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573019263077" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- A. HERO DINÁMICO CON SLIDESHOW DE FONDO -->
+    <header class="hero services-hero" style="padding-top: 80px;">
+        <div class="services-slideshow" id="services-slideshow">
+            <div class="slide-item active" style="background-image: url('images/1.webp');"></div>
+            <div class="slide-item" style="background-image: url('images/4.webp');"></div>
+            <div class="slide-item" style="background-image: url('images/8.webp');"></div>
+            <div class="slide-item" style="background-image: url('images/11.webp');"></div>
+            <div class="slide-item" style="background-image: url('images/14.webp');"></div>
+        </div>
+        <div class="hero-overlay services-hero-overlay"></div>
+        <div class="hero-content fade-in" style="max-width: 960px;">
+            <span class="featured-badge" data-key="srv-hero-badge">ARQUITECTURA DE SOLUCIONES 360°</span>
+            <h1 class="game-title" data-key="srv-hero-title">NUESTROS SERVICIOS</h1>
+            <p class="subtitle" data-key="srv-hero-subtitle">Combinamos dirección de arte, ingeniería multimedia y marketing de rendimiento para acelerar el crecimiento corporativo, posicionar tu marca con autoridad y multiplicar tus conversiones.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#services-catalog" class="btn primary-btn" data-key="srv-hero-btn1">Explorar Catálogo</a>
+                <a href="#contact" class="btn secondary-btn" data-key="srv-hero-btn2">Cotizar Proyecto</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-key="scroll-down">Descubre más</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- B. CATÁLOGO EXHAUSTIVO DE LOS 12 SERVICIOS CORPORATIVOS -->
+    <section id="services-catalog" class="services-catalog-section fade-in">
+        <div class="container-wide">
+            <span class="section-tag center-tag" data-key="srv-cat-tag">ECOSISTEMA INTEGRAL FOKUZ</span>
+            <h2 class="section-title" data-key="srv-cat-title">Soluciones Estratégicas, Tecnológicas y Audiovisuales</h2>
+            <p class="section-subtitle-center" data-key="srv-cat-subtitle">Cada servicio se diseña a la medida de los objetivos comerciales y etapa de escalamiento de tu empresa.</p>
+
+            <div class="services-grid-detailed">
+                <!-- 1. Branding & Identidad -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🚀</div>
+                        <span class="srv-badge" data-key="srv-1-badge">ESTRATEGIA & MARCA</span>
+                    </div>
+                    <h3 data-key="srv-1-title">Branding & Identidad</h3>
+                    <p class="srv-desc" data-key="srv-1-desc">Creación de concepto estratégico, sistemas visuales de alta recordación y manuales corporativos para posicionar marcas líderes.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-1-li1">Diseño de Logotipo y Sistema Gráfico</li>
+                        <li data-key="srv-1-li2">Manual de Identidad y Uso de Marca</li>
+                        <li data-key="srv-1-li3">ADN, Arquetipo y Tono de Comunicación</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Branding & Identidad" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 2. Diseño Web & UI/UX -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">💻</div>
+                        <span class="srv-badge" data-key="srv-2-badge">INGENIERÍA WEB</span>
+                    </div>
+                    <h3 data-key="srv-2-title">Diseño Web & UI/UX</h3>
+                    <p class="srv-desc" data-key="srv-2-desc">Sitios web corporativos y landing pages de alta conversión con experiencia de usuario inmersiva y arquitectura responsive ultrarrápida.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-2-li1">Prototipado UI/UX y Arquitectura de Conversión</li>
+                        <li data-key="srv-2-li2">Desarrollo Nativo Optimizado para Móviles</li>
+                        <li data-key="srv-2-li3">SEO Técnico, Velocidad y Analítica Integrada</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Diseño Web & UI/UX" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 3. Ecommerce Automatizado -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🛒</div>
+                        <span class="srv-badge" data-key="srv-3-badge">VENTAS 24/7</span>
+                    </div>
+                    <h3 data-key="srv-3-title">Ecommerce Automatizado</h3>
+                    <p class="srv-desc" data-key="srv-3-desc">Creación de tiendas online escalables integradas con pasarelas de pago locales e internacionales y flujos de compra sin fricción.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-3-li1">Catálogo Autogestionable y Carrito Dinámico</li>
+                        <li data-key="srv-3-li2">Integración con Wompi, Mercado Pago y PSE</li>
+                        <li data-key="srv-3-li3">Automatización de Pedidos y Notificaciones</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Ecommerce Automatizado" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 4. Gestión de Redes & Contenido -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">📱</div>
+                        <span class="srv-badge" data-key="srv-4-badge">SOCIAL GROWTH</span>
+                    </div>
+                    <h3 data-key="srv-4-title">Gestión de Redes & Contenido</h3>
+                    <p class="srv-desc" data-key="srv-4-desc">Community management profesional, parrillas estratégicas de contenido, curaduría visual y crecimiento activo de comunidad.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-4-li1">Planeación Mensual y Copywriting Persuasivo</li>
+                        <li data-key="srv-4-li2">Diseño de Piezas Gráficas y Carruseles</li>
+                        <li data-key="srv-4-li3">Gestión de Comunidad e Informes de Métricas</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Gestión de Redes & Contenido" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 5. Google Ads (SEM) -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🔍</div>
+                        <span class="srv-badge" data-key="srv-5-badge">TRÁFICO CALIFICADO</span>
+                    </div>
+                    <h3 data-key="srv-5-title">Google Ads (SEM)</h3>
+                    <p class="srv-desc" data-key="srv-5-desc">Campañas de intención de búsqueda activa, Display y YouTube para capturar clientes listos para comprar en el momento exacto.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-5-li1">Auditoría de Palabras Clave de Alta Intención</li>
+                        <li data-key="srv-5-li2">Configuración de Conversiones con Google Tag</li>
+                        <li data-key="srv-5-li3">Optimización Continua de Coste por Clic (CPC)</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Google Ads (SEM)" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 6. Meta Ads -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🎯</div>
+                        <span class="srv-badge" data-key="srv-6-badge">PERFORMANCE ROI</span>
+                    </div>
+                    <h3 data-key="srv-6-title">Meta Ads (Instagram & Facebook)</h3>
+                    <p class="srv-desc" data-key="srv-6-desc">Pauta hipersegmentada en el ecosistema Meta orientada a maximizar el retorno de inversión publicitaria (ROAS) y generación de leads.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-6-li1">Arquitectura de Embudos (Tráfico, Retargeting, Cierre)</li>
+                        <li data-key="srv-6-li2">Testing A/B de Creativos y Anuncios en Video</li>
+                        <li data-key="srv-6-li3">Integración con Píxel, API de Conversiones y WhatsApp</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Meta Ads" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 7. Registro de Marca -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">⚖️</div>
+                        <span class="srv-badge" data-key="srv-7-badge">BLINDAJE LEGAL</span>
+                    </div>
+                    <h3 data-key="srv-7-title">Registro de Marca (SIC)</h3>
+                    <p class="srv-desc" data-key="srv-7-desc">Acompañamiento legal especializado y blindaje de activos intangibles ante la Superintendencia de Industria y Comercio.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-7-li1">Estudio Previo de Viabilidad y Antecedentes Fonéticos</li>
+                        <li data-key="srv-7-li2">Clasificación Niza y Radicación Formal ante la SIC</li>
+                        <li data-key="srv-7-li3">Seguimiento Procesal hasta Concesión del Registro</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Registro de Marca (SIC)" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 8. Producción Audiovisual -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🎬</div>
+                        <span class="srv-badge" data-key="srv-8-badge">CINE & COMERCIAL</span>
+                    </div>
+                    <h3 data-key="srv-8-title">Producción Audiovisual</h3>
+                    <p class="srv-desc" data-key="srv-8-desc">Comerciales publicitarios, cobertura de eventos en alta fidelidad y video institucional de estándar cinematográfico.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-8-li1">Guionización, Storyboard y Dirección de Rodaje</li>
+                        <li data-key="srv-8-li2">Captura 4K, Iluminación Profesional y Sonido Directo</li>
+                        <li data-key="srv-8-li3">Color Grading Cinematográfico y Masterización</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Producción Audiovisual" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 9. Producción Multimedia -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">⚡</div>
+                        <span class="srv-badge" data-key="srv-9-badge">INTERACTIVO & 3D</span>
+                    </div>
+                    <h3 data-key="srv-9-title">Producción Multimedia</h3>
+                    <p class="srv-desc" data-key="srv-9-desc">Experiencias digitales interactivas, motion graphics avanzados, renderizado de producto y animación 2D/3D envolvente.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-9-li1">Animación de Logos, Bumpers y Gráficos en Movimiento</li>
+                        <li data-key="srv-9-li2">Visualización 3D y Activos Interactivos para Web</li>
+                        <li data-key="srv-9-li3">Presentaciones Corporativas Inmersivas</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Producción Multimedia" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 10. Edición de Video -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">✂️</div>
+                        <span class="srv-badge" data-key="srv-10-badge">RETENCIÓN VIRAL</span>
+                    </div>
+                    <h3 data-key="srv-10-title">Edición Dinámica de Video</h3>
+                    <p class="srv-desc" data-key="srv-10-desc">Montaje de alto impacto para formatos verticales virales (Reels, TikTok, Shorts) y postproducción de ritmo comercial.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-10-li1">Hooks Visuales en los Primeros 3 Segundos</li>
+                        <li data-key="srv-10-li2">Subtitulación Dinámica, SFX y Transiciones Fluidas</li>
+                        <li data-key="srv-10-li3">Adaptación Multi-Formato (9:16, 16:9, 1:1)</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Edición de Video" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 11. Fotografía Profesional -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">📸</div>
+                        <span class="srv-badge" data-key="srv-11-badge">ESTUDIO & LOCACIÓN</span>
+                    </div>
+                    <h3 data-key="srv-11-title">Fotografía Profesional</h3>
+                    <p class="srv-desc" data-key="srv-11-desc">Dirección fotográfica comercial para gastronomía, retrato corporativo, catálogos ecommerce en estudio y estilo de vida.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-11-li1">Iluminación de Estudio y Estilismo de Producto</li>
+                        <li data-key="srv-11-li2">Revelado Digital y Retoque de Alta Gama (High-End)</li>
+                        <li data-key="srv-11-li3">Entrega Optimizada para Impresión y Ecosistemas Web</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Fotografía Profesional" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+
+                <!-- 12. Producción & Diseño de Audio -->
+                <article class="service-detail-card glass-panel fade-in">
+                    <div class="srv-card-top">
+                        <div class="srv-icon">🎙️</div>
+                        <span class="srv-badge" data-key="srv-12-badge">ESTUDIO SONORO</span>
+                    </div>
+                    <h3 data-key="srv-12-title">Producción & Diseño de Audio</h3>
+                    <p class="srv-desc" data-key="srv-12-desc">Jingles comerciales originales, audio branding, mezcla y masterización publicitaria, locución comercial y producción de podcasts.</p>
+                    <ul class="srv-deliverables">
+                        <li data-key="srv-12-li1">Composición de Jingles y Logos Sonoros (Sonic Branding)</li>
+                        <li data-key="srv-12-li2">Grabación Vocal, Limpieza Acústica y Foley</li>
+                        <li data-key="srv-12-li3">Mezcla y Masterización bajo Estándar LUFS Broadcast</li>
+                    </ul>
+                    <a href="#contact" class="btn secondary-btn srv-cta-btn" data-service="Producción & Diseño de Audio" data-key="srv-btn-quote">Cotizar Plan Personalizado</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- C. METODOLOGÍA FOKUZ EN 4 FASES -->
+    <section class="methodology-section fade-in">
+        <div class="container-narrow">
+            <span class="section-tag center-tag" data-key="meth-tag">PROCESO DE EJECUCIÓN</span>
+            <h2 class="section-title" data-key="meth-title">Metodología Fokuz en 4 Fases</h2>
+            <p class="section-subtitle-center" data-key="meth-subtitle">Un flujo de ingeniería estructurado para transformar objetivos de negocio en activos rentables.</p>
+
+            <div class="methodology-grid">
+                <div class="meth-step glass-panel fade-in">
+                    <span class="meth-num">01</span>
+                    <h3 data-key="meth-1-title">Diagnóstico & Estrategia</h3>
+                    <p data-key="meth-1-desc">Auditamos el estado actual de tu marca, analizamos tu competencia directa y trazamos la hoja de ruta técnica y comercial con KPIs claros.</p>
+                </div>
+                <div class="meth-step glass-panel fade-in">
+                    <span class="meth-num">02</span>
+                    <h3 data-key="meth-2-title">Creación & Producción</h3>
+                    <p data-key="meth-2-desc">Nuestro laboratorio entra en acción: programación web, diseño de identidad, rodaje audiovisual y producción sonora in-house de alta factura.</p>
+                </div>
+                <div class="meth-step glass-panel fade-in">
+                    <span class="meth-num">03</span>
+                    <h3 data-key="meth-3-title">Lanzamiento & Pauta</h3>
+                    <p data-key="meth-3-desc">Desplegamos los activos en producción y activamos campañas hipersegmentadas en Google Ads y Meta Ads para capturar demanda real.</p>
+                </div>
+                <div class="meth-step glass-panel fade-in">
+                    <span class="meth-num">04</span>
+                    <h3 data-key="meth-4-title">Análisis & Optimización</h3>
+                    <p data-key="meth-4-desc">Medimos el comportamiento del usuario, iteramos creativos y optimizamos el presupuesto de forma continua para escalar el retorno de inversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D. CASOS DE ÉXITO / RESULTADOS MEDIBLES -->
+    <section class="cases-section fade-in">
+        <div class="container-wide">
+            <span class="section-tag center-tag" data-key="cases-tag">IMPACTO COMPROBADO</span>
+            <h2 class="section-title" data-key="cases-title">Estrategia en Acción: Reto vs. Solución</h2>
+            <p class="section-subtitle-center" data-key="cases-subtitle">Muestras reales de cómo nuestra integración de tecnología, video y pauta acelera resultados corporativos.</p>
+
+            <div class="cases-grid">
+                <!-- Caso 1 -->
+                <div class="case-card glass-panel fade-in">
+                    <div class="case-header">
+                        <span class="case-category" data-key="case-1-cat">ECOMMERCE & META ADS</span>
+                        <span class="case-metric" data-key="case-1-metric">+240% Conversión</span>
+                    </div>
+                    <h3 data-key="case-1-title">Escalamiento de Ventas y Automatización Comercial</h3>
+                    <div class="case-comparison">
+                        <div class="case-block challenge">
+                            <strong data-key="case-label-challenge">El Reto:</strong>
+                            <p data-key="case-1-challenge">Alta tasa de abandono de carrito, atención manual saturada en WhatsApp y anuncios estáticos con bajo retorno publicitario.</p>
+                        </div>
+                        <div class="case-block solution">
+                            <strong data-key="case-label-solution">Solución Fokuz:</strong>
+                            <p data-key="case-1-solution">Rediseño UI/UX con catálogo interactivo, reels comerciales con diseño sonoro envolvente y embudo de retargeting dinámico en Meta Ads.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div class="case-card glass-panel fade-in">
+                    <div class="case-header">
+                        <span class="case-category" data-key="case-2-cat">BRANDING & WEB CORPORATIVA</span>
+                        <span class="case-metric" data-key="case-2-metric">+180% Leads B2B</span>
+                    </div>
+                    <h3 data-key="case-2-title">Reposicionamiento de Autoridad y Captación en Google</h3>
+                    <div class="case-comparison">
+                        <div class="case-block challenge">
+                            <strong data-key="case-label-challenge">El Reto:</strong>
+                            <p data-key="case-2-challenge">Identidad visual desactualizada y sitio web lento que no proyectaba la solidez técnica de la empresa frente a clientes corporativos.</p>
+                        </div>
+                        <div class="case-block solution">
+                            <strong data-key="case-label-solution">Solución Fokuz:</strong>
+                            <p data-key="case-2-solution">Rebranding integral, blindaje de marca ante la SIC, arquitectura web de carga instantánea y campaña de búsqueda activa en Google Ads.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caso 3 -->
+                <div class="case-card glass-panel fade-in">
+                    <div class="case-header">
+                        <span class="case-category" data-key="case-3-cat">PRODUCCIÓN TRANSMEDIA & AUDIO</span>
+                        <span class="case-metric" data-key="case-3-metric">+500K Alcance</span>
+                    </div>
+                    <h3 data-key="case-3-title">Lanzamiento Audiovisual & Identidad Sonora de Marca</h3>
+                    <div class="case-comparison">
+                        <div class="case-block challenge">
+                            <strong data-key="case-label-challenge">El Reto:</strong>
+                            <p data-key="case-3-challenge">Baja retención de audiencia en redes sociales y contenido genérico que no diferenciaba el producto frente a competidores masivos.</p>
+                        </div>
+                        <div class="case-block solution">
+                            <strong data-key="case-label-solution">Solución Fokuz:</strong>
+                            <p data-key="case-3-solution">Producción de spot cinematográfico, creación de jingle y audio logo original, junto a una batería de edición viral para Reels y TikTok.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CIERRE / FORMULARIO DE CONVERSIÓN -->
+    <section id="contact" class="gameplay-section fade-in">
+        <h2 class="section-title" data-key="gameplay-title">Hablemos de tu proyecto</h2>
+        <div class="glass-panel" style="max-width: 600px; margin: 0 auto;">
+            <form id="contact-form" class="focuz-form">
+                <input type="text" id="from_name" name="Nombre" placeholder="Nombre completo" data-key-placeholder="form-name" required>
+                <input type="text" id="company_name" name="Empresa" placeholder="Empresa" data-key-placeholder="form-company">
+                <input type="email" id="reply_to" name="Correo" placeholder="Correo electrónico" data-key-placeholder="form-email" required>
+                <input type="tel" id="phone_num" name="Telefono" placeholder="Teléfono" data-key-placeholder="form-phone" required>
+                <textarea id="message_text" name="Mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?" data-key-placeholder="form-message" required></textarea>
+                <button type="submit" class="btn primary-btn w-100" data-key="ctrl-move">Solicitar Asesoría</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- FOOTER UNIFICADO -->
+    <footer>
+        <img src="images/logo2.webp" alt="Focuz Logo" class="footer-logo" title="Ver Info del Equipo">
+        <p data-key="footer-text">Estrategia, creatividad y tecnología para transformar ideas en resultados medibles.</p>
+        
+        <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61590798072623" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fokuz.marketing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@fokuz.marketing" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.63-1.5 5.23-3.8 6.44-2.34 1.24-5.32 1.17-7.53-.13-2.02-1.17-3.35-3.32-3.47-5.69-.11-2.18 1.05-4.4 2.89-5.54 1.94-1.2 4.45-1.35 6.54-.42v4.06c-1.22-.53-2.69-.5-3.81.25-1.1.72-1.73 2.06-1.63 3.38.07 1.25.86 2.45 2.01 3.01 1.16.58 2.62.5 3.69-.25 1.14-.77 1.83-2.13 1.85-3.52.05-4.8.03-9.59.03-14.39.01-.13 0-.26-.01-.39z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@FokuzMarketing" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+        <p class="copyright">© 2026 Focuz Marketing. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL DE IMAGEN / MULTIMEDIA -->
+    <div id="image-modal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" src="" alt="Proyecto ampliado">
+        <div id="modal-media-container" class="modal-media-container"></div>
+    </div>
+
+    <!-- MODAL DE EQUIPO DIRECTIVO -->
+    <div id="dev-modal" class="modal-overlay">
+        <div class="dev-modal-content team-modal">
+            <span class="dev-modal-close">&times;</span>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/foto.webp" alt="Nahum Sebastian Bermeo Barrera" class="dev-profile-pic">
+                    <h3 class="dev-name">Nahum Sebastian Bermeo</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Audio Production Technologist from UNAD</li>
+                            <li>Undergraduate Multimedia Engineer</li>
+                            <li>Communications and Marketing Management Assistant – UNAD</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/Angie.webp" alt="Angie Liseth Sepulveda" class="dev-profile-pic" style="object-fit: contain; background: #fff;">
+                    <h3 class="dev-name">Angie Sepulveda M.</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Marketing and Digital Business Undergraduate Student – UNAD</li>
+                            <li>Content Creator & Host</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

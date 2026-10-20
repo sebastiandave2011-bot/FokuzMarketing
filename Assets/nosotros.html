@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Fokuz Marketing - Laboratorio Creativo & Tecnológico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER STICKY UNIVERSAL -->
+    <div class="focuz-header">
+        <div class="header-left">
+            <button id="hamburger-menu" class="hamburger" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="logo" id="interactive-logo" title="Ir al Inicio">
+                <span class="interactive-letter">FOKUZ<span class="dot" style="color: var(--accent);">.</span></span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" id="global-search" placeholder="Buscar..." data-key-placeholder="search-placeholder">
+                <button id="btn-search" aria-label="Buscar">🔍</button>
+            </div>
+            <div class="lang-selector">
+                <button id="btn-es" class="active">ES</button>
+                <span>|</span>
+                <button id="btn-en">EN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN MÓVIL DESLIZABLE -->
+    <nav id="side-menu" class="side-menu">
+        <span class="close-menu">&times;</span>
+        <ul>
+            <li><a href="index.html" data-key="nav-home">Inicio</a></li>
+            <li><a href="nosotros.html" class="active" data-key="nav-about">Nosotros</a></li>
+            <li><a href="servicios.html" data-key="nav-services">Servicios</a></li>
+            <li><a href="portafolio.html" data-key="nav-portfolio">Portafolio</a></li>
+            <li><a href="tienda.html" data-key="nav-store">Tienda</a></li>
+            <li><a href="#contact" data-key="nav-contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/573019263077" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- A. HERO EDITORIAL NOSOTROS -->
+    <header class="hero about-hero" style="padding-top: 80px;">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="Assets/hero1.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in" style="max-width: 980px;">
+            <span class="featured-badge" data-key="about-hero-badge">LABORATORIO CREATIVO & TECNOLÓGICO</span>
+            <h1 class="game-title" data-key="about-hero-title">PENSAMIENTO CREATIVO Y EJECUCIÓN TECNOLÓGICA</h1>
+            <p class="subtitle" data-key="about-hero-subtitle">La sinergia exacta entre ingeniería multimedia, diseño sonoro comercial y marketing digital de alto rendimiento para escalar marcas con autoridad.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="#timeline" class="btn primary-btn" data-key="about-hero-btn1">Nuestra Trayectoria</a>
+                <a href="#leadership" class="btn secondary-btn" data-key="about-hero-btn2">Equipo Directivo</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span data-key="scroll-down">Descubre más</span>
+            <div class="arrow"></div>
+        </div>
+    </header>
+
+    <!-- B. QUIÉNES SOMOS & FILOSOFÍA OPERATIVA -->
+    <section class="philosophy-section fade-in">
+        <div class="container-narrow">
+            <div class="editorial-block glass-panel">
+                <span class="section-tag" data-key="phil-tag">ADN FOKUZ</span>
+                <h2 class="section-title" style="margin-bottom: 1.5rem;" data-key="phil-title">Más que una agencia: un laboratorio de ingeniería y contenido</h2>
+                <p class="editorial-lead" data-key="phil-lead">Fokuz Marketing no nació para replicar fórmulas corporativas tradicionales ni operar como una agencia de intermediación. Somos un ecosistema multidisciplinario donde el código limpio, el diseño acústico y la producción audiovisual convergen bajo un único criterio: generar impacto real y retorno medible.</p>
+                <p class="editorial-body" data-key="phil-body">Integramos todo el flujo productivo bajo un mismo techo. Desde la conceptualización estética de una identidad comercial y el desarrollo de arquitecturas web rápidas, hasta el rodaje en campo, la mezcla sonora de estándar publicitario y la pauta algorítmica en Meta y Google Ads.</p>
+            </div>
+
+            <div class="pillars-grid">
+                <div class="pillar-card fade-in">
+                    <div class="pillar-number">01</div>
+                    <h3 data-key="pillar-1-title">Creatividad Disruptiva</h3>
+                    <p data-key="pillar-1-desc">Rompemos el ruido digital con conceptos visuales atrevidos, estética dark cyber-lounge y dirección de arte que posiciona a cada marca como referente de su sector.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <div class="pillar-number">02</div>
+                    <h3 data-key="pillar-2-title">Tecnología Web Avanzada</h3>
+                    <p data-key="pillar-2-desc">Desarrollamos interfaces inmersivas, veloces y escalables sin dependencia de plantillas genéricas, optimizando cada milisegundo de carga para maximizar la conversión.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <div class="pillar-number">03</div>
+                    <h3 data-key="pillar-3-title">Narrativa Audiovisual & Sonora</h3>
+                    <p data-key="pillar-3-desc">Dominamos el ritmo de montaje cinematográfico y el diseño de audio publicitario para despertar emociones y retener la atención de las audiencias modernas.</p>
+                </div>
+                <div class="pillar-card fade-in">
+                    <div class="pillar-number">04</div>
+                    <h3 data-key="pillar-4-title">Optimización de Conversión</h3>
+                    <p data-key="pillar-4-desc">Cada pieza gráfica, línea de código y campaña de tráfico se respalda en analítica de datos, embudos estratégicos y métricas orientadas a ventas reales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- C. LÍNEA DE TIEMPO / NUESTRA HISTORIA (6 AÑOS DE TRAYECTORIA) -->
+    <section id="timeline" class="timeline-section fade-in">
+        <div class="container-narrow">
+            <span class="section-tag center-tag" data-key="tl-tag">EVOLUCIÓN CONTINUA</span>
+            <h2 class="section-title" data-key="tl-main-title">Nuestra Historia: +6 Años de Trayectoria</h2>
+            <p class="section-subtitle-center" data-key="tl-main-subtitle">Un recorrido forjado en producción técnica real, evolución constante y resultados comprobados.</p>
+
+            <div class="timeline-container">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-badge" data-key="tl-2020-badge">FASE I • CIMIENTO CREATIVO</span>
+                        <h3 data-key="tl-2020-title">Los Orígenes</h3>
+                        <p data-key="tl-2020-desc">Iniciamos como un estudio independiente de producción sonora profesional, diseño visual y primeras realizaciones multimedia, construyendo una base técnica rigurosa en captura acústica, edición y estética gráfica.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2022</div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-badge" data-key="tl-2022-badge">FASE II • INGENIERÍA INTERACTIVA</span>
+                        <h3 data-key="tl-2022-title">Fusión Tecnológica</h3>
+                        <p data-key="tl-2022-desc">Integramos el desarrollo web enfocado en conversión, arquitectura UI/UX e ingeniería multimedia interactiva, uniendo el mundo audiovisual con plataformas digitales de alto rendimiento.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-badge" data-key="tl-2024-badge">FASE III • RENDIMIENTO COMERCIAL</span>
+                        <h3 data-key="tl-2024-title">Escalamiento Transmedia</h3>
+                        <p data-key="tl-2024-desc">Desplegamos campañas digitales de alto impacto en Meta Ads y Google Ads, cobertura audiovisual corporativa de gran formato y estrategias integrales de posicionamiento y registro de marca.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-content glass-panel">
+                        <span class="timeline-badge" data-key="tl-2026-badge">FASE IV • ECOSISTEMA INTEGRAL</span>
+                        <h3 data-key="tl-2026-title">Consolidación Fokuz</h3>
+                        <p data-key="tl-2026-desc">Nos consolidamos como una agencia digital y boutique de producción transmedia multidisciplinaria en Colombia, orientada a marcas que exigen autoridad visual, soporte técnico 360° y retorno de inversión real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- D. MÉTRICAS DE IMPACTO (CONTADOR NUMÉRICO INTERACTIVO) -->
+    <section class="stats-section fade-in">
+        <div class="container-narrow">
+            <h2 class="section-title" data-key="stats-title">Métricas de Impacto</h2>
+            <div class="stats-grid">
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="6" data-prefix="+" data-suffix="">+0</div>
+                    <h3 class="stat-label" data-key="stat-1-label">Años de Trayectoria</h3>
+                    <p class="stat-desc" data-key="stat-1-desc">Evolución continua en producción sonora, visual y digital.</p>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="120" data-prefix="+" data-suffix="">+0</div>
+                    <h3 class="stat-label" data-key="stat-2-label">Proyectos & Campañas</h3>
+                    <p class="stat-desc" data-key="stat-2-desc">Ejecuciones estratégicas para empresas y emprendedores.</p>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="100" data-prefix="" data-suffix="%">0%</div>
+                    <h3 class="stat-label" data-key="stat-3-label">Producción In-House</h3>
+                    <p class="stat-desc" data-key="stat-3-desc">Audio, video, diseño y código desarrollados internamente.</p>
+                </div>
+                <div class="stat-card glass-panel">
+                    <div class="stat-number" data-target="24" data-prefix="" data-suffix="/7">0/7</div>
+                    <h3 class="stat-label" data-key="stat-4-label">Soporte & Consultoría</h3>
+                    <p class="stat-desc" data-key="stat-4-desc">Acompañamiento estratégico y monitoreo continuo de activos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E. VIDEO INSTITUCIONAL / REEL DE EQUIPO -->
+    <section class="team-reel-section trailers-section fade-in">
+        <h2 class="section-title" data-key="about-reel-heading">Nuestro Ritmo de Estudio & Dirección</h2>
+        <div class="featured-video-wrapper">
+            <div class="featured-video-header">
+                <span class="featured-badge" data-key="about-reel-badge">INSIDE FOKUZ LAB</span>
+                <h3 class="featured-video-title" data-key="about-reel-title">Dirección Técnica, Postproducción y Flujo Creativo</h3>
+                <p class="featured-video-desc" data-key="about-reel-desc">Conoce cómo articulamos nuestras sesiones de rodaje, edición de alto ritmo, diseño sonoro y arquitectura digital para entregar piezas que destacan por su factura técnica y poder comercial.</p>
+            </div>
+            <div class="iframe-container featured-iframe">
+                <iframe src="https://www.youtube.com/embed/PmNbX_v1fMo" title="Reel de Equipo Fokuz Marketing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- F. EL EQUIPO DIRECTIVO (HUMANIZANDO LA MARCA) -->
+    <section id="leadership" class="leadership-section fade-in">
+        <div class="container-narrow">
+            <span class="section-tag center-tag" data-key="lead-tag">DIRECCIÓN EJECUTIVA</span>
+            <h2 class="section-title" data-key="lead-title">El Equipo Directivo</h2>
+            <p class="section-subtitle-center" data-key="lead-subtitle">Mentes técnicas y estratégicas liderando cada proyecto de principio a fin.</p>
+
+            <div class="founders-grid">
+                <!-- Nahum Sebastian Bermeo -->
+                <article class="founder-card glass-panel fade-in">
+                    <div class="founder-img-wrapper">
+                        <img src="images/foto.webp" alt="Nahum Sebastian Bermeo" class="founder-img" loading="lazy">
+                        <span class="founder-role-badge" data-key="nahum-badge">TECH & MULTIMEDIA DIRECTOR</span>
+                    </div>
+                    <div class="founder-info">
+                        <h3 class="founder-name">Nahum Sebastian Bermeo</h3>
+                        <h4 class="founder-title" data-key="nahum-role">Co-Founder & Director Técnico / Multimedia</h4>
+                        <p class="founder-bio" data-key="nahum-bio">Tecnólogo en Producción de Audio e Ingeniero Multimedia (UNAD). Especialista en la convergencia entre tecnología interactiva, desarrollo web frontend de alto impacto, diseño sonoro comercial y post-producción audiovisual avanzada.</p>
+                        <div class="founder-skills">
+                            <span class="skill-chip" data-key="nahum-skill-1">Ingeniería Multimedia</span>
+                            <span class="skill-chip" data-key="nahum-skill-2">Producción & Diseño Sonoro</span>
+                            <span class="skill-chip" data-key="nahum-skill-3">Arquitectura Web UI/UX</span>
+                            <span class="skill-chip" data-key="nahum-skill-4">Postproducción & VFX</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Angie Liseth Sepulveda M. -->
+                <article class="founder-card glass-panel fade-in">
+                    <div class="founder-img-wrapper">
+                        <img src="images/Angie.webp" alt="Angie Liseth Sepulveda M." class="founder-img founder-img-light" loading="lazy">
+                        <span class="founder-role-badge" data-key="angie-badge">DIGITAL STRATEGY DIRECTOR</span>
+                    </div>
+                    <div class="founder-info">
+                        <h3 class="founder-name">Angie Liseth Sepulveda M.</h3>
+                        <h4 class="founder-title" data-key="angie-role">Co-Founder & Directora de Estrategia Digital</h4>
+                        <p class="founder-bio" data-key="angie-bio">Profesional en formación en Mercadeo y Negocios Digitales (UNAD), Creadora de Contenido y Host comercial. Lidera el posicionamiento de marca, la narrativa persuasiva en cámara, la gestión estratégica de comunidades y los modelos de conversión publicitaria.</p>
+                        <div class="founder-skills">
+                            <span class="skill-chip" data-key="angie-skill-1">Estrategia & Negocios Digitales</span>
+                            <span class="skill-chip" data-key="angie-skill-2">Dirección de Contenido & Host</span>
+                            <span class="skill-chip" data-key="angie-skill-3">Growth & Comunidad</span>
+                            <span class="skill-chip" data-key="angie-skill-4">Conversión Publicitaria</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- G. FACTORES DIFERENCIALES ("¿POR QUÉ FOKUZ?") -->
+    <section class="differentials-section fade-in">
+        <div class="container-narrow">
+            <span class="section-tag center-tag" data-key="diff-tag">VENTAJA COMPETITIVA</span>
+            <h2 class="section-title" data-key="diff-title">¿Por Qué Elegir a Fokuz?</h2>
+            <div class="diff-grid">
+                <div class="diff-card glass-panel fade-in">
+                    <div class="diff-icon">🎛️</div>
+                    <h3 data-key="diff-1-title">Producción Propia Sin Intermediarios</h3>
+                    <p data-key="diff-1-desc">Contamos con estudio e infraestructura propia para audio, video y desarrollo de código. Eliminamos sobrecostos de subcontratación y garantizamos control de calidad absoluto.</p>
+                </div>
+                <div class="diff-card glass-panel fade-in">
+                    <div class="diff-icon">📈</div>
+                    <h3 data-key="diff-2-title">Presupuesto Basado en ROI</h3>
+                    <p data-key="diff-2-desc">Cada inversión se diseña con mentalidad financiera: priorizamos los canales, formatos y campañas que aceleran el retorno de inversión y reducen el costo de adquisición.</p>
+                </div>
+                <div class="diff-card glass-panel fade-in">
+                    <div class="diff-icon">⚙️</div>
+                    <h3 data-key="diff-3-title">Rigor Técnico en Ingeniería Web</h3>
+                    <p data-key="diff-3-desc">Nuestros desarrollos web se construyen con arquitectura modular limpia, optimización móvil milimétrica y velocidad superior para superar a tu competencia en buscadores.</p>
+                </div>
+                <div class="diff-card glass-panel fade-in">
+                    <div class="diff-icon">🎬</div>
+                    <h3 data-key="diff-4-title">Estética Audiovisual de Alto Estándar</h3>
+                    <p data-key="diff-4-desc">Combinamos corrección de color cinematográfica, edición rítmica de alta retención y mezcla de sonido profesional para que tu marca proyecte autoridad inmediata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CIERRE / FORMULARIO DE CONVERSIÓN -->
+    <section id="contact" class="gameplay-section fade-in">
+        <h2 class="section-title" data-key="gameplay-title">Hablemos de tu proyecto</h2>
+        <div class="glass-panel" style="max-width: 600px; margin: 0 auto;">
+            <form id="contact-form" class="focuz-form">
+                <input type="text" id="from_name" name="Nombre" placeholder="Nombre completo" data-key-placeholder="form-name" required>
+                <input type="text" id="company_name" name="Empresa" placeholder="Empresa" data-key-placeholder="form-company">
+                <input type="email" id="reply_to" name="Correo" placeholder="Correo electrónico" data-key-placeholder="form-email" required>
+                <input type="tel" id="phone_num" name="Telefono" placeholder="Teléfono" data-key-placeholder="form-phone" required>
+                <textarea id="message_text" name="Mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?" data-key-placeholder="form-message" required></textarea>
+                <button type="submit" class="btn primary-btn w-100" data-key="ctrl-move">Solicitar Asesoría</button>
+            </form>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- FOOTER UNIFICADO -->
+    <footer>
+        <img src="images/logo2.webp" alt="Focuz Logo" class="footer-logo" title="Ver Info del Equipo">
+        <p data-key="footer-text">Estrategia, creatividad y tecnología para transformar ideas en resultados medibles.</p>
+        
+        <div class="footer-links">
+            <a href="https://www.facebook.com/profile.php?id=61590798072623" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/fokuz.marketing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.012-3.584.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@fokuz.marketing" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.63-1.5 5.23-3.8 6.44-2.34 1.24-5.32 1.17-7.53-.13-2.02-1.17-3.35-3.32-3.47-5.69-.11-2.18 1.05-4.4 2.89-5.54 1.94-1.2 4.45-1.35 6.54-.42v4.06c-1.22-.53-2.69-.5-3.81.25-1.1.72-1.73 2.06-1.63 3.38.07 1.25.86 2.45 2.01 3.01 1.16.58 2.62.5 3.69-.25 1.14-.77 1.83-2.13 1.85-3.52.05-4.8.03-9.59.03-14.39.01-.13 0-.26-.01-.39z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@FokuzMarketing" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+        </div>
+        <p class="copyright">© 2026 Focuz Marketing. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL DE IMAGEN / MULTIMEDIA -->
+    <div id="image-modal" class="modal-overlay">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" src="" alt="Proyecto ampliado">
+        <div id="modal-media-container" class="modal-media-container"></div>
+    </div>
+
+    <!-- MODAL DE EQUIPO DIRECTIVO -->
+    <div id="dev-modal" class="modal-overlay">
+        <div class="dev-modal-content team-modal">
+            <span class="dev-modal-close">&times;</span>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/foto.webp" alt="Nahum Sebastian Bermeo Barrera" class="dev-profile-pic">
+                    <h3 class="dev-name">Nahum Sebastian Bermeo</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Audio Production Technologist from UNAD</li>
+                            <li>Undergraduate Multimedia Engineer</li>
+                            <li>Communications and Marketing Management Assistant – UNAD</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/Angie.webp" alt="Angie Liseth Sepulveda" class="dev-profile-pic" style="object-fit: contain; background: #fff;">
+                    <h3 class="dev-name">Angie Sepulveda M.</h3>
+                    <div class="dev-info-section">
+                        <h4 class="dev-section-title">🎓 Educación / Education</h4>
+                        <ul class="dev-list">
+                            <li>Marketing and Digital Business Undergraduate Student – UNAD</li>
+                            <li>Content Creator & Host</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
